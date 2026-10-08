@@ -1,0 +1,9 @@
+pair_id,baseline_minutes,idcp_minutes,correction_minutes,idcp_outcome,evidence_complete
+T01,25,20,1,accepted,true
+T02,32,26,2,accepted,true
+T03,18,16,1,failed,false
+T04,40,32,2,accepted,true
+T05,29,23,1,accepted,true
+T06,24,21,1,accepted,true
+T07,35,28,3,failed,true
+T08,22,19,1,accepted,true
