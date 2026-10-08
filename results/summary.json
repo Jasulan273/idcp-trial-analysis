@@ -1,0 +1,14 @@
+{
+  "module_version": "1.0.0",
+  "python_version": "3.12.14",
+  "input_sha256": "9e685d1f26539168af37fbcfc9c22753aa2966e3bd2cf0c44a5aef75dfe523ba",
+  "pair_count": 8,
+  "baseline_median_minutes": 27.0,
+  "idcp_with_correction_median_minutes": 23.0,
+  "reduction_of_medians_percent": 14.814815,
+  "median_paired_reduction_percent": 11.964286,
+  "accepted_count": 6,
+  "failed_count": 2,
+  "evidence_complete_percent": 87.5,
+  "interpretation": "Descriptive coordination-time comparison; failed tasks remain included. No causal claim, total labor saving or ROI is inferred."
+}

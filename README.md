@@ -31,6 +31,15 @@ python -m unittest discover -s tests -v
 The CLI writes `summary.json` and `comparison.svg`. Open the SVG in a browser.
 Optional: `python -m pip install -e .` enables the `idcp-trial` command.
 
+The repository includes the input and generated demonstration outputs:
+
+- [Input CSV](data/example_pairs.csv)
+- [Calculated summary](results/summary.json)
+- [Comparison chart](results/comparison.svg)
+
+These outputs were generated from the synthetic example using Python 3.12.14.
+Running the command again replaces them; the recorded Python version reflects your environment.
+
 ## Input contract
 
 The CSV must have these columns, in this order:
