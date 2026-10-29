@@ -9,7 +9,7 @@ services:
     environment:
       JAVA_OPTS: '-Djenkins.install.runSetupWizard=false -Xmx512m'
     group_add:
-      - '0'
+      - '${DOCKER_GID:-0}'
     volumes:
       - assignment5_jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock

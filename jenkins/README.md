@@ -15,8 +15,7 @@ From the repository root, create a private password file (never commit it):
 mkdir -p jenkins/.secrets
 chmod 700 jenkins/.secrets
 python3 -c "import secrets; from pathlib import Path; p=Path('jenkins/.secrets/admin_password'); p.write_text(secrets.token_urlsafe(32)); p.chmod(0o600)"
-docker build -t idcp-assignment5-jenkins:local jenkins/
-docker compose -p assignment5 -f jenkins/compose.yml up -d --no-build
+sh jenkins/start.sh
 ```
 
 Open `http://127.0.0.1:8085`, sign in as `assignment-admin` with the password in
@@ -36,3 +35,10 @@ docker compose -p assignment5 -f jenkins/compose.yml stop
 ```
 
 The Docker volume retains the build history. Use `start` to resume it.
+
+`start.sh` detects the mounted Docker socket's numeric group and grants that group
+to the Jenkins process; it does not change socket permissions or run Jenkins as root.
+On the author's Mac the default Colima data disk was full, so a separate profile
+was created with `colima start assignment5 --activate=false --cpu 2 --memory 2 --disk 15`.
+For that profile, prefix setup/start commands with `DOCKER_CONTEXT=colima-assignment5`.
+This leaves the default Docker context and other projects unchanged.
