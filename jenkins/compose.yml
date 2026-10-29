@@ -1,0 +1,23 @@
+services:
+  jenkins:
+    image: idcp-assignment5-jenkins:local
+    build:
+      context: .
+    container_name: assignment5-jenkins
+    ports:
+      - '127.0.0.1:8085:8080'
+    environment:
+      JAVA_OPTS: '-Djenkins.install.runSetupWizard=false -Xmx512m'
+    group_add:
+      - '0'
+    volumes:
+      - assignment5_jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    secrets:
+      - admin_password
+    mem_limit: 1g
+secrets:
+  admin_password:
+    file: .secrets/admin_password
+volumes:
+  assignment5_jenkins_home:

@@ -7,3 +7,5 @@ results/*
 dist/
 *.egg-info/
 .DS_Store
+jenkins/.secrets/
+build-results/

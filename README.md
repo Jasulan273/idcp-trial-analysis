@@ -102,6 +102,21 @@ Small samples do not establish a general productivity effect. Training, order ef
 can confound a before/after comparison. Real data collection, confidence intervals and IDCP export integration
 are future work and are not represented as implemented features.
 
-## License
+## Assignment 5 Docker and Jenkins
 
+The research analysis remains separate from the IDCP platform. Assignment 5 adds
+a containerized execution environment and an actual local Jenkins pipeline.
+See [setup and limits](jenkins/README.md), [Dockerfile](Dockerfile) and [Jenkinsfile](Jenkinsfile).
+
+```sh
+docker build --target test -t idcp-trial-analysis:test .
+docker run --rm --network none idcp-trial-analysis:test
+docker build -t idcp-trial-analysis:local .
+docker run --rm --network none idcp-trial-analysis:local
+```
+
+The example still uses synthetic data. A successful pipeline verifies software
+execution; it does not demonstrate a real productivity improvement.
+
+## License
 MIT. See [LICENSE](LICENSE).

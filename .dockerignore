@@ -1,0 +1,8 @@
+*
+!Dockerfile
+!idcp_trial/
+!idcp_trial/*.py
+!tests/
+!tests/*.py
+!data/
+!data/example_pairs.csv
