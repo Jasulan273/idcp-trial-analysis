@@ -1,0 +1,6 @@
+commit=0233e0834e5185e41639027f741727421f92ee3f
+image_id=sha256:9349c0ee93c46d1217828b2ba1dd3e129b49b2a97cfc04cb3ff6177f687bff62
+container_user=10001:10001
+engine=29.5.2
+9e685d1f26539168af37fbcfc9c22753aa2966e3bd2cf0c44a5aef75dfe523ba  data/example_pairs.csv
+d3272a3019f4ec82fc73374af5a8b00ae2a5bd5fcd02e38344e7b11da10f4424  build-results/summary.json

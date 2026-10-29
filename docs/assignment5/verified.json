@@ -1,0 +1,18 @@
+{
+  "jenkins_version": "2.580.2",
+  "build_number": 2,
+  "commit": "0233e0834e5185e41639027f741727421f92ee3f",
+  "result": "SUCCESS",
+  "causes": [
+    [
+      {
+        "_class": "hudson.triggers.SCMTrigger$SCMTriggerCause",
+        "shortDescription": "Started by an SCM change"
+      },
+      {
+        "_class": "hudson.triggers.SCMTrigger$SCMTriggerCause",
+        "shortDescription": "Started by an SCM change"
+      }
+    ]
+  ]
+}

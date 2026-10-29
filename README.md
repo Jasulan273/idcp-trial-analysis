@@ -107,6 +107,8 @@ are future work and are not represented as implemented features.
 The research analysis remains separate from the IDCP platform. Assignment 5 adds
 a containerized execution environment and an actual local Jenkins pipeline.
 See [setup and limits](jenkins/README.md), [Dockerfile](Dockerfile) and [Jenkinsfile](Jenkinsfile).
+Actual screenshots, the successful SCM-triggered build log and generated outputs
+are retained in [Assignment 5 evidence](docs/assignment5/README.md).
 
 ```sh
 docker build --target test -t idcp-trial-analysis:test .

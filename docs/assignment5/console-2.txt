@@ -1,0 +1,216 @@
+Started by an SCM change
+Started by an SCM change
+Obtained Jenkinsfile from git https://github.com/Jasulan273/idcp-trial-analysis.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/idcp-trial-analysis-ci
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] timeout
+[2026-10-29T13:20:11.753Z] Timeout set to expire in 15 min
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] deleteDir
+[Pipeline] checkout
+[2026-10-29T13:20:11.854Z] Selected Git installation does not exist. Using Default
+[2026-10-29T13:20:11.854Z] The recommended git tool is: NONE
+[2026-10-29T13:20:11.855Z] No credentials specified
+[2026-10-29T13:20:11.857Z] Cloning the remote Git repository
+[2026-10-29T13:20:11.857Z] Cloning repository https://github.com/Jasulan273/idcp-trial-analysis.git
+[2026-10-29T13:20:11.858Z]  > git init /var/jenkins_home/workspace/idcp-trial-analysis-ci # timeout=10
+[2026-10-29T13:20:11.864Z] Fetching upstream changes from https://github.com/Jasulan273/idcp-trial-analysis.git
+[2026-10-29T13:20:11.864Z]  > git --version # timeout=10
+[2026-10-29T13:20:11.869Z]  > git --version # 'git version 2.47.3'
+[2026-10-29T13:20:11.869Z]  > git fetch --tags --force --progress -- https://github.com/Jasulan273/idcp-trial-analysis.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-10-29T13:20:12.870Z]  > git config remote.origin.url https://github.com/Jasulan273/idcp-trial-analysis.git # timeout=10
+[2026-10-29T13:20:12.872Z]  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-10-29T13:20:12.881Z] Avoid second fetch
+[2026-10-29T13:20:12.883Z]  > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+[2026-10-29T13:20:12.885Z] Checking out Revision 0233e0834e5185e41639027f741727421f92ee3f (refs/remotes/origin/main)
+[2026-10-29T13:20:12.886Z]  > git config core.sparsecheckout # timeout=10
+[2026-10-29T13:20:12.889Z]  > git checkout -f 0233e0834e5185e41639027f741727421f92ee3f # timeout=10
+[2026-10-29T13:20:12.894Z] Commit message: "fix: detect Docker socket group for Jenkins"
+[2026-10-29T13:20:12.895Z]  > git rev-list --no-walk a645ddb2d5c94bb822f3a8579fcc1053d500ab40 # timeout=10
+[Pipeline] sh
+[2026-10-29T13:20:13.181Z] + git rev-parse HEAD
+[2026-10-29T13:20:13.181Z] 0233e0834e5185e41639027f741727421f92ee3f
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Unit tests)
+[Pipeline] sh
+[2026-10-29T13:20:13.482Z] + docker build --target test -t idcp-trial-analysis:test-2 .
+[2026-10-29T13:20:13.733Z] #0 building with "default" instance using docker driver
+[2026-10-29T13:20:13.733Z] 
+[2026-10-29T13:20:13.733Z] #1 [internal] load build definition from Dockerfile
+[2026-10-29T13:20:13.733Z] #1 transferring dockerfile: 739B done
+[2026-10-29T13:20:13.733Z] #1 DONE 0.0s
+[2026-10-29T13:20:13.733Z] 
+[2026-10-29T13:20:13.733Z] #2 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm@sha256:e697c81897302a4c4333bade000d98038fbb21eb064f8ee1fd42d02ebcd9d337
+[2026-10-29T13:20:13.733Z] #2 DONE 0.0s
+[2026-10-29T13:20:13.734Z] 
+[2026-10-29T13:20:13.734Z] #3 [internal] load .dockerignore
+[2026-10-29T13:20:13.734Z] #3 transferring context: 135B done
+[2026-10-29T13:20:13.734Z] #3 DONE 0.0s
+[2026-10-29T13:20:13.734Z] 
+[2026-10-29T13:20:13.734Z] #4 [internal] load build context
+[2026-10-29T13:20:13.734Z] #4 transferring context: 10.20kB done
+[2026-10-29T13:20:13.734Z] #4 DONE 0.0s
+[2026-10-29T13:20:13.734Z] 
+[2026-10-29T13:20:13.734Z] #5 [base 1/5] FROM docker.io/library/python:3.12-slim-bookworm@sha256:e697c81897302a4c4333bade000d98038fbb21eb064f8ee1fd42d02ebcd9d337
+[2026-10-29T13:20:13.734Z] #5 resolve docker.io/library/python:3.12-slim-bookworm@sha256:e697c81897302a4c4333bade000d98038fbb21eb064f8ee1fd42d02ebcd9d337 done
+[2026-10-29T13:20:13.734Z] #5 DONE 0.0s
+[2026-10-29T13:20:13.734Z] 
+[2026-10-29T13:20:13.734Z] #6 [base 2/5] WORKDIR /work
+[2026-10-29T13:20:13.734Z] #6 DONE 0.0s
+[2026-10-29T13:20:13.734Z] 
+[2026-10-29T13:20:13.734Z] #7 [base 3/5] RUN groupadd --gid 10001 research && useradd --uid 10001 --gid 10001 --no-log-init research     && mkdir /work/results && chown 10001:10001 /work/results
+[2026-10-29T13:20:13.734Z] #7 DONE 0.1s
+[2026-10-29T13:20:13.734Z] 
+[2026-10-29T13:20:13.734Z] #8 [base 4/5] COPY idcp_trial/ ./idcp_trial/
+[2026-10-29T13:20:13.734Z] #8 DONE 0.0s
+[2026-10-29T13:20:13.734Z] 
+[2026-10-29T13:20:13.734Z] #9 [base 5/5] COPY data/example_pairs.csv ./data/example_pairs.csv
+[2026-10-29T13:20:13.734Z] #9 DONE 0.0s
+[2026-10-29T13:20:13.734Z] 
+[2026-10-29T13:20:13.734Z] #10 [test 1/1] COPY tests/ ./tests/
+[2026-10-29T13:20:13.734Z] #10 DONE 0.0s
+[2026-10-29T13:20:13.734Z] 
+[2026-10-29T13:20:13.734Z] #11 exporting to image
+[2026-10-29T13:20:13.734Z] #11 exporting layers 0.1s done
+[2026-10-29T13:20:13.734Z] #11 exporting manifest sha256:01c09ce41dd09a563b7744721391308450b90bc223a2b309aca6276e99f0c406
+[2026-10-29T13:20:13.988Z] #11 exporting manifest sha256:01c09ce41dd09a563b7744721391308450b90bc223a2b309aca6276e99f0c406 done
+[2026-10-29T13:20:13.988Z] #11 exporting config sha256:72105347ee1fb95a28100d940fa848f0f82c0990ed1be22bc4ae982d8e6bf73f done
+[2026-10-29T13:20:13.989Z] #11 exporting attestation manifest sha256:ca857dc80397d4804a87f73ce6afa58b23b1cce3bfa055be82bea6607acb5143 done
+[2026-10-29T13:20:13.989Z] #11 exporting manifest list sha256:6549d90816ca4e92987e463ff51b0d7918ef4df39f1bd7bdd36c098830fa6d58 done
+[2026-10-29T13:20:13.989Z] #11 naming to docker.io/library/idcp-trial-analysis:test-2 done
+[2026-10-29T13:20:13.989Z] #11 unpacking to docker.io/library/idcp-trial-analysis:test-2 0.0s done
+[2026-10-29T13:20:13.989Z] #11 DONE 0.1s
+[2026-10-29T13:20:13.989Z] + docker run --rm --network none idcp-trial-analysis:test-2
+[2026-10-29T13:20:14.239Z] test_chart_escapes_pair_labels (test_analysis.AnalysisTests.test_chart_escapes_pair_labels) ... ok
+[2026-10-29T13:20:14.239Z] test_cli_invalid_input_has_nonzero_exit (test_analysis.AnalysisTests.test_cli_invalid_input_has_nonzero_exit) ... ok
+[2026-10-29T13:20:14.493Z] test_cli_outputs_and_provenance (test_analysis.AnalysisTests.test_cli_outputs_and_provenance) ... ok
+[2026-10-29T13:20:14.494Z] test_corrections_can_turn_savings_negative (test_analysis.AnalysisTests.test_corrections_can_turn_savings_negative) ... ok
+[2026-10-29T13:20:14.494Z] test_invalid_inputs_rejected (test_analysis.AnalysisTests.test_invalid_inputs_rejected) ... ok
+[2026-10-29T13:20:14.494Z] test_paired_median_is_different_from_reduction_of_medians (test_analysis.AnalysisTests.test_paired_median_is_different_from_reduction_of_medians) ... ok
+[2026-10-29T13:20:14.494Z] test_sample_known_medians_and_failed_tasks (test_analysis.AnalysisTests.test_sample_known_medians_and_failed_tasks) ... ok
+[2026-10-29T13:20:14.494Z] test_wrong_header_rejected (test_analysis.AnalysisTests.test_wrong_header_rejected) ... ok
+[2026-10-29T13:20:14.494Z] 
+[2026-10-29T13:20:14.494Z] ----------------------------------------------------------------------
+[2026-10-29T13:20:14.494Z] Ran 8 tests in 0.317s
+[2026-10-29T13:20:14.494Z] 
+[2026-10-29T13:20:14.494Z] OK
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build image)
+[Pipeline] sh
+[2026-10-29T13:20:14.842Z] + docker build --target runtime -t idcp-trial-analysis:build-2 .
+[2026-10-29T13:20:14.842Z] #0 building with "default" instance using docker driver
+[2026-10-29T13:20:14.842Z] 
+[2026-10-29T13:20:14.842Z] #1 [internal] load build definition from Dockerfile
+[2026-10-29T13:20:14.842Z] #1 DONE 0.0s
+[2026-10-29T13:20:14.842Z] 
+[2026-10-29T13:20:14.843Z] #1 [internal] load build definition from Dockerfile
+[2026-10-29T13:20:14.843Z] #1 transferring dockerfile: 739B done
+[2026-10-29T13:20:14.843Z] #1 DONE 0.0s
+[2026-10-29T13:20:14.843Z] 
+[2026-10-29T13:20:14.843Z] #2 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm@sha256:e697c81897302a4c4333bade000d98038fbb21eb064f8ee1fd42d02ebcd9d337
+[2026-10-29T13:20:14.843Z] #2 DONE 0.0s
+[2026-10-29T13:20:14.843Z] 
+[2026-10-29T13:20:14.843Z] #3 [internal] load .dockerignore
+[2026-10-29T13:20:14.843Z] #3 transferring context: 135B done
+[2026-10-29T13:20:14.843Z] #3 DONE 0.0s
+[2026-10-29T13:20:14.843Z] 
+[2026-10-29T13:20:14.843Z] #4 [internal] load build context
+[2026-10-29T13:20:14.843Z] #4 transferring context: 223B done
+[2026-10-29T13:20:14.843Z] #4 DONE 0.0s
+[2026-10-29T13:20:14.843Z] 
+[2026-10-29T13:20:14.843Z] #5 [base 1/5] FROM docker.io/library/python:3.12-slim-bookworm@sha256:e697c81897302a4c4333bade000d98038fbb21eb064f8ee1fd42d02ebcd9d337
+[2026-10-29T13:20:14.843Z] #5 resolve docker.io/library/python:3.12-slim-bookworm@sha256:e697c81897302a4c4333bade000d98038fbb21eb064f8ee1fd42d02ebcd9d337 done
+[2026-10-29T13:20:14.843Z] #5 DONE 0.0s
+[2026-10-29T13:20:14.843Z] 
+[2026-10-29T13:20:14.843Z] #6 [base 2/5] WORKDIR /work
+[2026-10-29T13:20:14.843Z] #6 CACHED
+[2026-10-29T13:20:14.843Z] 
+[2026-10-29T13:20:14.843Z] #7 [base 4/5] COPY idcp_trial/ ./idcp_trial/
+[2026-10-29T13:20:14.843Z] #7 CACHED
+[2026-10-29T13:20:14.843Z] 
+[2026-10-29T13:20:14.843Z] #8 [base 3/5] RUN groupadd --gid 10001 research && useradd --uid 10001 --gid 10001 --no-log-init research     && mkdir /work/results && chown 10001:10001 /work/results
+[2026-10-29T13:20:14.843Z] #8 CACHED
+[2026-10-29T13:20:14.843Z] 
+[2026-10-29T13:20:14.843Z] #9 [base 5/5] COPY data/example_pairs.csv ./data/example_pairs.csv
+[2026-10-29T13:20:14.843Z] #9 CACHED
+[2026-10-29T13:20:14.843Z] 
+[2026-10-29T13:20:14.843Z] #10 exporting to image
+[2026-10-29T13:20:14.843Z] #10 exporting layers done
+[2026-10-29T13:20:14.843Z] #10 exporting manifest sha256:dc17089ad6fb35d91b1685aefc60c7f7ed4bb57b78f7a58bc434d1dcba6008b8 done
+[2026-10-29T13:20:14.843Z] #10 exporting config sha256:106eb957337fbad659b479e04e7b24c8ac8c2a17001f10508d519df0bd974301 done
+[2026-10-29T13:20:14.843Z] #10 exporting attestation manifest sha256:c9adbca551658345e9882227eef2e87efe92707e3eb89b08c132e8b3869eb7fe done
+[2026-10-29T13:20:14.843Z] #10 exporting manifest list sha256:9349c0ee93c46d1217828b2ba1dd3e129b49b2a97cfc04cb3ff6177f687bff62 done
+[2026-10-29T13:20:14.845Z] #10 naming to docker.io/library/idcp-trial-analysis:build-2 done
+[2026-10-29T13:20:14.845Z] #10 unpacking to docker.io/library/idcp-trial-analysis:build-2 done
+[2026-10-29T13:20:14.845Z] #10 DONE 0.0s
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Run analysis)
+[Pipeline] sh
+[2026-10-29T13:20:15.201Z] + mkdir -p build-results
+[2026-10-29T13:20:15.201Z] + docker run --name idcp-analysis-2 --network none idcp-trial-analysis:build-2
+[2026-10-29T13:20:15.201Z] {
+[2026-10-29T13:20:15.201Z]   "module_version": "1.0.0",
+[2026-10-29T13:20:15.201Z]   "python_version": "3.12.16",
+[2026-10-29T13:20:15.201Z]   "input_sha256": "9e685d1f26539168af37fbcfc9c22753aa2966e3bd2cf0c44a5aef75dfe523ba",
+[2026-10-29T13:20:15.201Z]   "pair_count": 8,
+[2026-10-29T13:20:15.201Z]   "baseline_median_minutes": 27.0,
+[2026-10-29T13:20:15.201Z]   "idcp_with_correction_median_minutes": 23.0,
+[2026-10-29T13:20:15.201Z]   "reduction_of_medians_percent": 14.814815,
+[2026-10-29T13:20:15.201Z]   "median_paired_reduction_percent": 11.964286,
+[2026-10-29T13:20:15.201Z]   "accepted_count": 6,
+[2026-10-29T13:20:15.201Z]   "failed_count": 2,
+[2026-10-29T13:20:15.201Z]   "evidence_complete_percent": 87.5,
+[2026-10-29T13:20:15.201Z]   "interpretation": "Descriptive coordination-time comparison; failed tasks remain included. No causal claim, total labor saving or ROI is inferred."
+[2026-10-29T13:20:15.201Z] }
+[2026-10-29T13:20:15.201Z] + docker cp idcp-analysis-2:/work/results/. build-results/
+[2026-10-29T13:20:15.452Z] + printf commit=
+[2026-10-29T13:20:15.452Z] + git rev-parse HEAD
+[2026-10-29T13:20:15.452Z] + printf image_id=
+[2026-10-29T13:20:15.452Z] + docker image inspect --format {{.Id}} idcp-trial-analysis:build-2
+[2026-10-29T13:20:15.452Z] + printf container_user=
+[2026-10-29T13:20:15.452Z] + docker image inspect --format {{.Config.User}} idcp-trial-analysis:build-2
+[2026-10-29T13:20:15.452Z] + docker version --format engine={{.Server.Version}}
+[2026-10-29T13:20:15.452Z] + sha256sum data/example_pairs.csv build-results/summary.json
+[2026-10-29T13:20:15.452Z] + docker rm idcp-analysis-2
+[2026-10-29T13:20:15.452Z] idcp-analysis-2
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Archive results)
+[Pipeline] archiveArtifacts
+[2026-10-29T13:20:15.502Z] Archiving artifacts
+[2026-10-29T13:20:15.511Z] Recording fingerprints
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] sh
+[2026-10-29T13:20:15.848Z] + docker rm -f idcp-analysis-2
+[Pipeline] sh
+[2026-10-29T13:20:16.124Z] + docker image rm idcp-trial-analysis:test-2
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timeout
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

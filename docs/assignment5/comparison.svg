@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="499" viewBox="0 0 880 499">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="Arial,sans-serif" font-size="14" fill="#222">
+<text x="20" y="25">Matched coordination tasks (minutes; correction time included)</text>
+<rect x="20" y="40" width="15" height="12" fill="#527fa2"/><text x="42" y="51">Baseline</text>
+<rect x="170" y="40" width="15" height="12" fill="#b6673e"/><text x="192" y="51">IDCP + correction</text>
+<text x="20" y="94">T01</text>
+<rect x="125" y="75" width="337.500" height="16" fill="#527fa2"/>
+<rect x="125" y="95" width="283.500" height="16" fill="#b6673e"/>
+<text x="472.500" y="88">25</text>
+<text x="418.500" y="108">21</text>
+<text x="20" y="142">T02</text>
+<rect x="125" y="123" width="432.000" height="16" fill="#527fa2"/>
+<rect x="125" y="143" width="378.000" height="16" fill="#b6673e"/>
+<text x="567.000" y="136">32</text>
+<text x="513.000" y="156">28</text>
+<text x="20" y="190">T03</text>
+<rect x="125" y="171" width="243.000" height="16" fill="#527fa2"/>
+<rect x="125" y="191" width="229.500" height="16" fill="#b6673e"/>
+<text x="378.000" y="184">18</text>
+<text x="364.500" y="204">17</text>
+<text x="20" y="238">T04</text>
+<rect x="125" y="219" width="540.000" height="16" fill="#527fa2"/>
+<rect x="125" y="239" width="459.000" height="16" fill="#b6673e"/>
+<text x="675.000" y="232">40</text>
+<text x="594.000" y="252">34</text>
+<text x="20" y="286">T05</text>
+<rect x="125" y="267" width="391.500" height="16" fill="#527fa2"/>
+<rect x="125" y="287" width="324.000" height="16" fill="#b6673e"/>
+<text x="526.500" y="280">29</text>
+<text x="459.000" y="300">24</text>
+<text x="20" y="334">T06</text>
+<rect x="125" y="315" width="324.000" height="16" fill="#527fa2"/>
+<rect x="125" y="335" width="297.000" height="16" fill="#b6673e"/>
+<text x="459.000" y="328">24</text>
+<text x="432.000" y="348">22</text>
+<text x="20" y="382">T07</text>
+<rect x="125" y="363" width="472.500" height="16" fill="#527fa2"/>
+<rect x="125" y="383" width="418.500" height="16" fill="#b6673e"/>
+<text x="607.500" y="376">35</text>
+<text x="553.500" y="396">31</text>
+<text x="20" y="430">T08</text>
+<rect x="125" y="411" width="297.000" height="16" fill="#527fa2"/>
+<rect x="125" y="431" width="270.000" height="16" fill="#b6673e"/>
+<text x="432.000" y="424">22</text>
+<text x="405.000" y="444">20</text>
+</g></svg>
